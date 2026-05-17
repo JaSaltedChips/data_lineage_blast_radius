@@ -72,8 +72,8 @@ The project demonstrates a minimal but practical lineage-impact engine:
 ## Project structure
 
 - `lineage/`: core library (`lineage_core`)
-- `src/`: main executable (`main`)
-- `test/`: test executable (`test`) using custom assert macros (no GTest)
+- `src/`: main executable (`blast_radius`)
+- `test/`: test executable (`test_blast_radius`) using custom assert macros (no GTest)
 
 ## Build and run
 
@@ -93,13 +93,13 @@ This project sets custom runtime output directories to `bin/` in the source tree
 For Visual Studio generators, configuration subfolders are used:
 
 ```powershell
-.\bin\src\Debug\main.exe
+.\bin\src\Debug\blast_radius.exe
 ```
 
 For Release:
 
 ```powershell
-.\bin\src\Release\main.exe
+.\bin\src\Release\blast_radius.exe
 ```
 
 ### Configure and build with tests
@@ -112,13 +112,13 @@ cmake --build build
 Run tests:
 
 ```powershell
-.\bin\test\Debug\test.exe
+.\bin\test\Debug\test_blast_radius.exe
 ```
 
 For Release:
 
 ```powershell
-.\bin\test\Release\test.exe
+.\bin\test\Release\test_blast_radius.exe
 ```
 
 ## Useful CMake commands

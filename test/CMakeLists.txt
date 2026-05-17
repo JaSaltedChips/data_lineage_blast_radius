@@ -1,3 +1,3 @@
-add_executable(test test_lineage.cpp)
-target_link_libraries(test PRIVATE lineage_core)
-set_target_properties(test PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin/test")
+add_executable(test_blast_radius test_lineage.cpp)
+target_link_libraries(test_blast_radius PRIVATE lineage_core)
+set_target_properties(test_blast_radius PROPERTIES RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/bin/test")

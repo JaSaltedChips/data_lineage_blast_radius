@@ -41,7 +41,7 @@ void DataLineageGraph::simulateChange(const std::string& origin) {
     
     std::size_t event_index = _auditLog.size() - 1;
     for (const auto& [node, depth] : affected) {
-        node_index[node].push_back(event_index);
+        _nodeIndex[node].push_back(event_index);
     }
     wait();
 }
@@ -75,11 +75,11 @@ for (const auto& event : _auditLog) {
 
 void DataLineageGraph::traceNode(const std::string& node) {
     std::cout << "\n=== TRACE: which events affected '" << node << "'? ===\n";
-    if (node_index.find(node) == node_index.end()) {
+    if (_nodeIndex.find(node) == _nodeIndex.end()) {
             std::cout << "No recorded events affected '" << node << "'.\n";
             return;
     }
-    for (const auto& event_index: node_index[node]) {
+    for (const auto& event_index: _nodeIndex[node]) {
         const auto& event = _auditLog[event_index];
         std::cout << "Change to: " << event.origin << " at " << event.timestamp 
                     << " (distance: " << event.affectedNodes.at(node) << ")" << std::endl;

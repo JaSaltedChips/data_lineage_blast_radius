@@ -26,8 +26,14 @@ struct ChangeEvent {
  */
 class DataLineageGraph {
 private:
+    /**
+     * @brief Adjacency list mapping each node name to its direct downstream neighbours.
+    */
     std::unordered_map<std::string, std::vector<std::string>> _graph;
-    std::unordered_map<std::string, std::vector<std::size_t>> node_index;
+    /**
+     * @brief Maps each node name to the indices of audit-log entries in which it appears as an affected node.
+    */
+    std::unordered_map<std::string, std::vector<std::size_t>> _nodeIndex;
     
     public:
     /**
